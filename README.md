@@ -3,7 +3,7 @@
 
 Ứng dụng Electron 8.0.0 là một phiên bản cũ của Electron, được phát triển để tạo ra các ứng dụng máy tính để bàn bằng cách sử dụng công nghệ web như HTML, CSS và JavaScript.
 
-Ứng dụng Electron 8.0.0, mặc dù mang lại nhiều lợi ích bằng việc cho phép phát triển các ứng dụng desktop ngang hàng với web bằng JavaScript, HTML, và CSS, nhưng cũng tiềm ẩn rủi ro về bảo mật, cụ thể là lỗ hổng XSS đến RCE (Remote Code Execution).
+Mặc dù mang lại nhiều lợi ích bằng việc cho phép phát triển các ứng dụng desktop ngang hàng với web bằng JavaScript, HTML, và CSS, nhưng cũng tiềm ẩn rủi ro về bảo mật, cụ thể là lỗ hổng XSS đến RCE (Remote Code Execution).
 
 Tổng quan : XSS to RCE
 
@@ -19,6 +19,7 @@ cd desktop-2.0.0/
 npm audit
 ```
 ![1](https://github.com/Lilly-dox/Exploit-CVE-2023-22518/assets/130746941/47051781-9a54-4831-8142-e6b165d3b16c)
+
 Chúng ta nhận được output :
 ```
 npm ERR! code ENOLOCK
