@@ -1,7 +1,7 @@
 # RCE-to-XSS-Electron-8.0.0
 
 
-Ứng dụng Electron 8.0.0 là một phiên bản cũ của Electron, được phát triển để tạo ra các ứng dụng máy tính để bàn bằng cách sử dụng công nghệ web như HTML, CSS và JavaScript.
+Ứng dụng Electron 8.0.0 là một phiên bản cũ của Electron, được sử dụng để xây dựng các ứng dụng desktop chéo nền tảng (cross-platform) bằng công nghệ web như JavaScript, HTML và CSS. 
 
 Mặc dù mang lại nhiều lợi ích bằng việc cho phép phát triển các ứng dụng desktop ngang hàng với web bằng JavaScript, HTML, và CSS, nhưng cũng tiềm ẩn rủi ro về bảo mật, cụ thể là lỗ hổng XSS đến RCE (Remote Code Execution).
 
