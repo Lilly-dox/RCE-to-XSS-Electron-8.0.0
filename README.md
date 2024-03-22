@@ -86,6 +86,7 @@ Lệnh ‘id’ trả về thông tin về người dùng hiện tại như là 
 
 * alert() là phương thức javascript tiêu chuẩn để hiển thị hộp thoại cánh báo với nội dung được chỉ định
 
+
 File:
 renderer.js
 
