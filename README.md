@@ -69,8 +69,25 @@ Module thường xuyên bị attacker lợi dụng , nhất là khi API Node.js 
     5. **`os` và `path`**: Mặc dù ít nguy hiểm hơn các module khác, nhưng khi được kết hợp với các module như `fs`, chúng có thể được sử dụng để xây dựng các đường dẫn đến các tệp tin quan trọng hoặc thu thập thông tin về hệ thống mục tiêu.
 => Sử dụng suyntax của API Node.js để khai thác
 
+Chúng ta sẽ ứng dụng và giải thích luôn 1 payload điển hình : 
+<img src=x onerror="alert(require('child_process').execSync('id').toString());">
+
+1.	<img src=x : đoạn script này bắt đầu định nghĩa HTML image element.
+Gán cho src=x nghĩa là không phải đường dân ảnh source ảnh hợp lệ . Nên đương nhiên sẽ kích hoạt sang onerror <đây là cố tình không điền src hợp lệ để điều hướng thực thi qua onerror >
+2.	onerror= : đây là thuộc tính xử lí được kích hoạt khi src không hợp lệ
+3.	alert(require(‘child_process’).execSync(‘id’).toString()); : Code Javascript này được thực thi do sự kiện onerror . 
+*  Phần require(‘child_process’).execSync(‘id’) là lệnh Node.js sử dụng module child_process để thực thi lệnh hệ thống (system command) ‘id’ , lệnh này sẽ output ID của nhóm và người dùng thực (real and effective user and group IDs)
+*  Phương thức execSync có nghĩa là thực thi lệnh một cách đồng bộ
+execSync (viết tắt của executes synchronnously : thực thi đồng bộ). Nghĩa là nó sẽ chặn việc thực thi tiếp theo cho đến khi lệnh hệ thống (system command) trả về kết quả . 
+Lệnh ‘id’ trả về thông tin về người dùng hiện tại như là ID người dùng (uid), ID nhóm (gid) và bất kì thành viên nhóm nào .
+
+Phương thức .toString() : chuyển đổi đầu ra của lệnh từ bộ đệm thành biểu diễn chuỗi (from buffer to a string representation)
+
+alert() là phương thức javascript tiêu chuẩn để hiển thị hộp thoại cánh báo với nội dung được chỉ định
+
 File:
 renderer.js
+
  ![4](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/fe5546a0-8657-437a-b3b6-1167166ac820)
 
 
