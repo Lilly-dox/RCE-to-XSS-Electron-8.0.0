@@ -70,8 +70,9 @@ Module thường xuyên bị attacker lợi dụng , nhất là khi API Node.js 
 => Sử dụng suyntax của API Node.js để khai thác
 
 Chúng ta sẽ ứng dụng và giải thích luôn 1 payload điển hình : 
+```
 <img src=x onerror="alert(require('child_process').execSync('id').toString());">
-
+```
 1.	<img src=x : đoạn script này bắt đầu định nghĩa HTML image element.
 Gán cho src=x nghĩa là không phải đường dân ảnh source ảnh hợp lệ . Nên đương nhiên sẽ kích hoạt sang onerror <đây là cố tình không điền src hợp lệ để điều hướng thực thi qua onerror >
 2.	onerror= : đây là thuộc tính xử lí được kích hoạt khi src không hợp lệ
