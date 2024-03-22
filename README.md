@@ -86,9 +86,12 @@ Lệnh ‘id’ trả về thông tin về người dùng hiện tại như là 
 
 * alert() là phương thức javascript tiêu chuẩn để hiển thị hộp thoại cánh báo với nội dung được chỉ định
 
+Ứng dụng vào thực hành với file vulnerable1 <để ở trên>
+
+File chứa lỗ hổng được "trích xuất" ra từ Electron 8.0.0
 
 File:
-renderer.js
+vulnerable1/renderer.js
 
  ![4](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/fe5546a0-8657-437a-b3b6-1167166ac820)
 
