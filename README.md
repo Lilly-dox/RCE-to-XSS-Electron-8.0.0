@@ -56,6 +56,19 @@ Như đã thấy :
 2. `contextIsolation` bị tắt (`contextIsolation: false`)**:
     - contextIsolation là  Là một tính năng bảo mật khác của Electron, phân cách môi trường giữa các mã nguồn được thực thi trong renderer. Nếu contextIsolation bị tắt, nó giúp mã độc có khả năng truy cập vào các APIs và mở đường cho RCE nếu người dùng bị tấn công XSS.
 
+Chúng ta sẽ lợi dụng sự tự do truy cập các API Node.js
+
+Nói qua 1 xíu về API Node.js
+API Node.js là môi trường thực thi code Javascript phía server máy chủ . sử dụng V8 engine, engine Javascript cùng một loạy các API tích hợp để cung cấp CHỨC NĂNG TƯƠNG TÁC VỚI HỆ ĐIỀU HÀNH hơn là chỉ chạy trong môi trường trình duyệt thông thường nhưu javascript .
+
+Module thường xuyên bị attacker lợi dụng , nhất là khi API Node.js được dùng trong một môi trường với ít các biện pháp bảo mật , như là Electron khi ‘nodeIntegration’ <nút tích hợp> được bật . Các module thường bị lợi dụng là:
+1.	Child_process : module cho pháp thực thi lệnh hệ thống hoặc các chương trình khác . Đại loại là child_process sẽ được lợi dụng để chạy shell .
+2.	fs ( File system ) : lợi dụng để chỉnh sửa xóa , thêm file tùm lum . Cài phần mêm độc hại như file upload 
+3.	‘net’ và ‘dgram’ : chiếm quyền tương tác với giao thực mạng TCP , UDP -> mở kết nối mạng độc hại hoặc thực hiện Dos
+4. **`vm`**: Đây là một module cho phép bạn thực thi JavaScript trong một context ảo. Nó có thể bị lợi dụng để chạy mã độc trong một môi trường tưởng chừng được cô lập.
+    5. **`os` và `path`**: Mặc dù ít nguy hiểm hơn các module khác, nhưng khi được kết hợp với các module như `fs`, chúng có thể được sử dụng để xây dựng các đường dẫn đến các tệp tin quan trọng hoặc thu thập thông tin về hệ thống mục tiêu.
+=> Sử dụng suyntax của API Node.js để khai thác
+
 File:
 renderer.js
  ![4](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/fe5546a0-8657-437a-b3b6-1167166ac820)
