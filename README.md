@@ -134,3 +134,5 @@ test <img src=x onerror=alert("XSS")>
 ```
 
 ![image](https://github.com/Lilly-dox/RCE-to-XSS-Electron-8.0.0/assets/130746941/05068ccd-5568-47be-a810-0d6dd6028399)
+
+Nói chung là có rất nhiều module của API Node.js mà bạn có thể nghịch thêm .
