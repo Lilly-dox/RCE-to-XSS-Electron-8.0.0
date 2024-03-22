@@ -8,7 +8,9 @@ Mặc dù mang lại nhiều lợi ích bằng việc cho phép phát triển c�
 Tổng quan : XSS to RCE
 
 Setup 
+
   Sử dụng Electron 8.0.0 open source 
+  
   URL Download : https://github.com/standardnotes/desktop/archive/v2.0.0.tar.gz
  
   Commands
