@@ -82,9 +82,9 @@ Gán cho src=x nghĩa là không phải đường dân ảnh source ảnh hợp 
 execSync (viết tắt của executes synchronnously : thực thi đồng bộ). Nghĩa là nó sẽ chặn việc thực thi tiếp theo cho đến khi lệnh hệ thống (system command) trả về kết quả . 
 Lệnh ‘id’ trả về thông tin về người dùng hiện tại như là ID người dùng (uid), ID nhóm (gid) và bất kì thành viên nhóm nào .
 
-Phương thức .toString() : chuyển đổi đầu ra của lệnh từ bộ đệm thành biểu diễn chuỗi (from buffer to a string representation)
+* Phương thức .toString() : chuyển đổi đầu ra của lệnh từ bộ đệm thành biểu diễn chuỗi (from buffer to a string representation)
 
-alert() là phương thức javascript tiêu chuẩn để hiển thị hộp thoại cánh báo với nội dung được chỉ định
+* alert() là phương thức javascript tiêu chuẩn để hiển thị hộp thoại cánh báo với nội dung được chỉ định
 
 File:
 renderer.js
