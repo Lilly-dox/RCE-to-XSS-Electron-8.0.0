@@ -52,9 +52,9 @@ vulnerable1/main.js
 
 Như đã thấy :
 1. `nodeIntegration` được bật (`nodeIntegration: true`)**:
-    - Cài đặt này cho phép các quy trình kết xuất (tức là các trang web) tự do sử dụng API Node.js. Mặc dù việc kích hoạt tính năng này có thể thuận tiện cho các nhà phát triển nhưng nó làm tăng đáng kể rủi ro bảo mật. Nếu kẻ tấn công khai thác lỗ hổng XSS (Cross-Site Scripting) trong ứng dụng của bạn, chúng có thể sử dụng API Node.js để thực hiện các hành động độc hại trên hệ thống của người dùng, chẳng hạn như đọc/ghi tệp hoặc thực thi lệnh, dẫn đến Mã từ xa Lỗ hổng thực thi (RCE).
+    - nodeIntegration được bật, trang web có thể tự do sử dựng các module Node.js. Mặc dù việc kích hoạt tính năng này có thể thuận tiện cho các nhà phát triển nhưng nó làm tăng đáng kể rủi ro bảo mật. Nếu kẻ tấn công khai thác lỗ hổng XSS (Cross-Site Scripting) trong ứng dụng, chúng có thể sử dụng API Node.js để thực hiện các hành động độc hại trên hệ thống của người dùng, chẳng hạn như đọc/ghi tệp hoặc thực thi lệnh, dẫn đến Mã từ xa Lỗ hổng thực thi (RCE).
 2. `contextIsolation` bị tắt (`contextIsolation: false`)**:
-    - Cách ly bối cảnh là một tính năng bảo mật giúp tách bối cảnh JavaScript của trang được tải khỏi bối cảnh JavaScript của API Electron và tập lệnh tải trước. Bằng cách tắt tính năng này, bạn cho phép cả tập lệnh của trang và API Electron chia sẻ cùng một ngữ cảnh JavaScript. Lỗ hổng XSS trong trường hợp này có thể khiến kẻ tấn công xác định lại các nguyên mẫu tích hợp sẵn để giả mạo chức năng của ứng dụng hoặc giành quyền truy cập vào các API nhạy cảm.
+    - contextIsolation là  Là một tính năng bảo mật khác của Electron, phân cách môi trường giữa các mã nguồn được thực thi trong renderer. Nếu contextIsolation bị tắt, nó giúp mã độc có khả năng truy cập vào các APIs và mở đường cho RCE nếu người dùng bị tấn công XSS.
 
 File:
 renderer.js
